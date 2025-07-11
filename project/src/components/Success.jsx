@@ -3,18 +3,29 @@ import "./Success.css";
 
 const Success = () => {
   useEffect(() => {
-    // Call your mock API when user lands on success page
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/purchase`,
-     {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ status: "success", user: "meena" })
-    })
-      .then((res) => res.json())
-      .then((data) => console.log("✅ /api/purchase response:", data))
-      .catch((err) => console.error("❌ /api/purchase error:", err));
+    const sendPurchaseStatus = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/purchase`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ status: "success", user: "meena" }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("✅ /api/purchase response:", data);
+      } catch (err) {
+        console.error("❌ /api/purchase error:", err.message);
+        // Optional: silently fail or notify user if needed
+      }
+    };
+
+    sendPurchaseStatus();
   }, []);
 
   return (
@@ -27,3 +38,4 @@ const Success = () => {
 };
 
 export default Success;
+
