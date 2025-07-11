@@ -4,7 +4,8 @@ import "./Success.css";
 const Success = () => {
   useEffect(() => {
     // Call your mock API when user lands on success page
-    fetch("http://localhost:4242/api/purchase", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/purchase`,
+     {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
