@@ -1,0 +1,18 @@
+/* File: src/components/Success.css */
+.success-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 24px;
+    border-radius: 8px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .success-container a {
+    display: inline-block;
+    margin-top: 16px;
+    color: #FF7A00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
