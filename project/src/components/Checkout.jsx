@@ -3,7 +3,7 @@
 
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import "./Checkout.css"; // Make sure this file exists and has your styles
+import "./Checkout.css"; 
 
 // Load your Stripe public test key
 const stripePromise = loadStripe("pk_test_51RjfrSC6gkdZlLEBUQI4vTx8vCfMJl3CfusmtY2AmHHOM0DRNoDiX1lak5uPMRTmrfvG3fIiwV757H6x9OiDwC9D00aihYNxBk");
